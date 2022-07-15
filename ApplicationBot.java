@@ -46,6 +46,8 @@ public class ApplicationBot extends TelegramLongPollingBot {
         Message message = update.getMessage();
         String text = message.getText();
         long chat_id = message.getChatId();
+        
+        // run code
         if (message.hasText() && message.getText().equals("/start")) {
             SendMessage sendMessage = new SendMessage();
             sendMessage.setText("Assalomu alaykum " + message.getFrom().getFirstName() + " botga xush kelibsiz !");
@@ -75,7 +77,7 @@ public class ApplicationBot extends TelegramLongPollingBot {
 
 
     }
-
+    //check text is consists of only Digits and Letters
     public boolean check(String text) {
         if (text.length() > 4) {
             for (int i = 0; i < text.length() - 3; i++) {
@@ -92,7 +94,7 @@ public class ApplicationBot extends TelegramLongPollingBot {
         return true;
 
     }
-
+    // this method return number in the text
     public double getSumm(String text) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
@@ -100,11 +102,11 @@ public class ApplicationBot extends TelegramLongPollingBot {
         }
         return Double.valueOf(stringBuilder.toString());
     }
-
+    //this method return Ccy in the text
     public String getCcy(String text) {
         return text.substring(text.length() - 3);
     }
-
+    //this method return currency array
     public Vayuta[] getValyutas() {
         Vayuta[] vayutas;
         try {
@@ -133,7 +135,7 @@ public class ApplicationBot extends TelegramLongPollingBot {
 
         return arr;
     }
-
+    //this method return 
     public Vayuta Service(String Ccy) {
         Vayuta[] valyutas = getValyutas();
         for (int i = 0; i < valyutas.length; i++) {
