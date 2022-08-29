@@ -123,8 +123,6 @@ public class ApplicationBot extends TelegramLongPollingBot {
         }
         Vayuta uzs = new Vayuta(76, null, "UZS", null, null, null, null, null, "1", null, null);
         Vayuta[] arr = new Vayuta[vayutas.length + 1];
-//        Arrays.copyOfRange(vayutas,0,vayutas.length);
-//        arr[arr.length-1]=uzs;
         for (int i = 0; i < vayutas.length; i++) {
             arr[i] = vayutas[i];
         }
